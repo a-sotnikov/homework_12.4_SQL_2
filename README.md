@@ -42,7 +42,7 @@ WHERE `length` > (SELECT AVG(`length`) FROM film)
 
 ```sql
 SELECT 
-    MONTHNAME(payment_date) AS payment_month, 
+    DATE_FORMAT(payment_date, '%M %Y') AS payment_month, 
     SUM(amount) AS total_amount, 
     COUNT(rental_id) AS rental_qty 
 FROM payment
